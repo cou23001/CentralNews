@@ -1,5 +1,5 @@
 const routes = require('express').Router();
-const { getNews } = require('../controllers/newsContoller');
+const { getNews } = require('../controllers/newsController');
 
 
 routes.get('/', (req,res) => {
@@ -8,5 +8,7 @@ routes.get('/', (req,res) => {
 });
 
 routes.get('/news', getNews);
+
+routes.get('/portal', getNews);
 
 module.exports = routes; 

@@ -1,8 +1,8 @@
 const express = require('express');
-const { getNews } = require('./controllers/newsContoller');
+const newsRoutes = require('./src/routes/newsRoutes');
 const cors = require('cors');
 const app = express();
-const routes = require('./routes/index');
+const routes = require('./src/routes/index');
 const axios = require('axios');
 
 app
@@ -11,9 +11,10 @@ app
   .use(express.urlencoded({ extended: true }))
   .use('/', routes);
 
-app.use(express.static('public'));
+app.use(express.static('src'));
+app.use(newsRoutes);
 
-app.get('/api/news', getNews);
+//app.get('/api/news', getNews);
 
 
 //const db = require('./models');
