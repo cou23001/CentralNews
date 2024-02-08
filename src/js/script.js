@@ -45,10 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryCheckboxes = document.getElementById('categoryCheckboxes');
     const categorySelect = document.getElementById('category');
 
-    // Sample categories
-    //const allCategories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
-    //let allCategories = getUserPreferences().categories;
-    //console.log(allCategories);
     // Dynamically populate checkboxes for each category
     allCategories.forEach(category => {
         const checkbox = document.createElement('input');
@@ -64,17 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryCheckboxes.appendChild(label);
         categoryCheckboxes.appendChild(document.createElement('br'));
     });
-/*
-    // Open the preferences modal
-    preferencesBtn.addEventListener('click', () => {
-        preferencesModal.style.display = 'block';
-    });
 
-    // Close the preferences modal
-    closeBtn.addEventListener('click', () => {
-        preferencesModal.style.display = 'none';
-    });
-*/
     // Close the modal if the user clicks outside of it
     window.addEventListener('click', (event) => {
         if (event.target === preferencesModal) {
@@ -204,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add event listener to the category selector form
-    //const categoryForm = document.getElementById('categoryForm');
     categoryForm.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
         const selectedCategory = document.getElementById('category').value;
@@ -212,8 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initial fetch when the page loads
-    //const storedPreferences = getUserPreferences();
-    //console.log(storedPreferences);
     const initialCategory = storedPreferences.categories.length > 0 ? storedPreferences.categories[0] : 'general';
     fetchNews(initialCategory);
 
