@@ -48,14 +48,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dynamically populate checkboxes for each category
     allCategories.forEach(category => {
         const checkbox = document.createElement('input');
+        const checkboxId = `categoryCheckbox_${category}`;
         checkbox.type = 'checkbox';
+        checkbox.id = checkboxId;
         checkbox.name = 'categories';
+        //checkbox.name = checkboxId;
         checkbox.value = category;
         //checkbox.checked = true; // Default to checked
         checkbox.checked = userCategories ? userCategories.includes(category) : true;
 
         const label = document.createElement('label');
         label.textContent = category;
+        label.setAttribute('for', checkboxId);
 
         categoryCheckboxes.appendChild(checkbox);
         categoryCheckboxes.appendChild(label);
