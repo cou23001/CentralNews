@@ -1,14 +1,18 @@
-const routes = require('express').Router();
+const path = require('path');
+const router = require('express').Router();
 const { getNews } = require('../controllers/newsController');
 
-
-routes.get('/', (req,res) => {
+//routes.get('/', (req,res) => {
     //#swagger.tags=['Hello World']
-    res.send("Hello World!");
+    //res.send("Hello World!");
+//});
+
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
-routes.get('/news', getNews);
+router.get('/news', getNews);
 
-routes.get('/portal', getNews);
+//routes.get('/portal', getNews);
 
-module.exports = routes; 
+module.exports = router; 
