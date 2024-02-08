@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const formContainer = document.getElementById('formContainer');
 
     const allCategories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
-
     // Check if there are stored preferences in local storage
     const storedPreferences = getUserPreferences();
     const userCategories = storedPreferences.categories;
@@ -19,8 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     select.id = 'category';
     select.name = 'category';
 
+    const cats = userCategories.length === 0 ? allCategories : userCategories;
+
     // Populate select options based on stored preferences or default categories
-    (userCategories || allCategories).forEach(category => {
+    cats.forEach(category => {
         const option = document.createElement('option');
         option.value = category;
         option.textContent = capitalizeFirstLetter(category);
@@ -111,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const news = await response.json();
             // Filter out news with content "[Removed]" 
             const filteredNews = news.filter(article => article.content !== "[Removed]");
+            console.log(filteredNews);  
 
             displayNews(filteredNews,category);
         } catch (error) {
