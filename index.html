@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Central News - Top Headlines</h1>
-
+    <header>
+        <h1>Central News - Top Headlines</h1>
+        <button id="preferencesBtn">User Preferences</button>
+    </header>
     <form id="categoryForm">
         <label for="category">Select a category:</label>
         <select id="category" name="category">
@@ -22,6 +24,19 @@
         </select>
         <button type="submit">Fetch News</button>
     </form>
+
+    <div id="preferencesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>User Preferences</h2>
+            <form id="preferencesForm">
+                <label for="categories">Select categories to display:</label>
+                <div id="categoryCheckboxes">
+                </div>
+                <button type="submit">Save Preferences</button>
+            </form>
+        </div>
+    </div>
     
     <ul id="newsList"></ul>
     <script src="./js/script.js"></script>
