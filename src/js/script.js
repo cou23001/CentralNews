@@ -198,10 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function capitalizeFirstLetter(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
 // Function to save user preferences to local storage
 function saveUserPreferences(preferences) {
     localStorage.setItem('userPreferences', JSON.stringify(preferences));   
