@@ -4,6 +4,10 @@ const cors = require('cors');
 const app = express();
 const routes = require('./src/routes/index');
 const axios = require('axios');
+const path = require('path');
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 app
   .use(cors())
