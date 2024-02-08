@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         checkbox.type = 'checkbox';
         checkbox.name = 'categories';
         checkbox.value = category;
-        checkbox.checked = true; // Default to checked
+        //checkbox.checked = true; // Default to checked
+        checkbox.checked = userCategories ? userCategories.includes(category) : true;
 
         const label = document.createElement('label');
         label.textContent = category;
@@ -226,11 +227,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
-
+/*
 // Function to save user preferences to local storage
 function saveUserPreferences(preferences) {
     localStorage.setItem('userPreferences', JSON.stringify(preferences));   
 }
+*/
 
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
