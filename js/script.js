@@ -1,4 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const formContainer = document.getElementById('formContainer');
+
+    const allCategories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
+
+    // Check if there are stored preferences in local storage
+    const storedPreferences = getUserPreferences();
+    const userCategories = storedPreferences.categories;
+
+    const categoryForm = document.createElement('form');
+    categoryForm.id = 'categoryForm';
+
+    const label = document.createElement('label');
+    label.textContent = 'Select a category:';
+    label.setAttribute('for', 'category');
+
+    const select = document.createElement('select');
+    select.id = 'category';
+    select.name = 'category';
+
+    // Populate select options based on stored preferences or default categories
+    (userCategories || allCategories).forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = capitalizeFirstLetter(category);
+        select.appendChild(option);
+    });
+
+    const button = document.createElement('button');
+    button.type = 'submit';
+    button.textContent = 'Fetch News';
+
+    categoryForm.appendChild(label);
+    categoryForm.appendChild(select);
+    categoryForm.appendChild(button);
+
+    formContainer.appendChild(categoryForm);
+
+
     const preferencesBtn = document.getElementById('preferencesBtn');
     const preferencesModal = document.getElementById('preferencesModal');
     const closeBtn = preferencesModal.querySelector('.close-btn');
@@ -7,8 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const categorySelect = document.getElementById('category');
 
     // Sample categories
-    const allCategories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
-
+    //const allCategories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
+    //let allCategories = getUserPreferences().categories;
+    //console.log(allCategories);
     // Dynamically populate checkboxes for each category
     allCategories.forEach(category => {
         const checkbox = document.createElement('input');
@@ -24,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryCheckboxes.appendChild(label);
         categoryCheckboxes.appendChild(document.createElement('br'));
     });
-
+/*
     // Open the preferences modal
     preferencesBtn.addEventListener('click', () => {
         preferencesModal.style.display = 'block';
@@ -34,13 +74,22 @@ document.addEventListener('DOMContentLoaded', () => {
     closeBtn.addEventListener('click', () => {
         preferencesModal.style.display = 'none';
     });
-
+*/
     // Close the modal if the user clicks outside of it
     window.addEventListener('click', (event) => {
         if (event.target === preferencesModal) {
             preferencesModal.style.display = 'none';
         }
     });
+    
+    // Function to open/close preferences modal
+    function togglePreferencesModal() {
+        preferencesModal.style.display = preferencesModal.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Open/close preferences modal
+    preferencesBtn.addEventListener('click', togglePreferencesModal);
+    closeBtn.addEventListener('click', togglePreferencesModal);
 
     // Handle form submission
     preferencesForm.addEventListener('submit', (event) => {
@@ -163,7 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initial fetch when the page loads
-    const storedPreferences = getUserPreferences();
+    //const storedPreferences = getUserPreferences();
+    //console.log(storedPreferences);
     const initialCategory = storedPreferences.categories.length > 0 ? storedPreferences.categories[0] : 'general';
     fetchNews(initialCategory);
 
@@ -192,13 +242,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return storedPreferences ? JSON.parse(storedPreferences) : { categories: [] };
     }
 
-    function capitalizeFirstLetter(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
 });
 
 // Function to save user preferences to local storage
 function saveUserPreferences(preferences) {
     localStorage.setItem('userPreferences', JSON.stringify(preferences));   
+}
+
+function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
