@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cental News</title>
+    <title>Central News</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <h1>Top 5 Headlines</h1>
+    <h1>Top Headlines</h1>
+
+    <form id="categoryForm">
+        <label for="category">Select a category:</label>
+        <select id="category" name="category">
+            <option value="general">General</option>
+            <option value="business">Business</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="health">Health</option>
+            <option value="science">Science</option>
+            <option value="sports">Sports</option>
+            <option value="technology">Technology</option>
+        </select>
+        <button type="submit">Fetch News</button>
+    </form>
+    
     <ul id="newsList"></ul>
     <script src="./js/script.js"></script>
 </body>
