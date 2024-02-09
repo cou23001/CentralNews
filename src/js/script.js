@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const news = await response.json();
             // Filter out news with content "[Removed]" 
             const filteredNews = news.filter(article => article.content !== "[Removed]");
-
+            console.log(filteredNews);
             displayNews(filteredNews,category);
         } catch (error) {
             console.error(error);
@@ -163,11 +163,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const title = document.createElement('h2');
             title.className = 'card-title';
-            title.textContent = headline.title;
+            const filteredTitle = headline.title.replace(/\s*-\s*.+$/, '');
+            title.textContent = filteredTitle;
 
             const description = document.createElement('p');
             description.className = 'card-description';
             description.textContent = headline.description;
+
+            const content = document.createElement('p');
+            content.className = 'card-content';
+            const thecontent = headline.content;
+            //const filteredString = thecontent.replace(/\s*\[.*?chars\]/, '');
+            const filteredString = thecontent ? thecontent.replace(/\s*\[.*?chars\]/, '') : '';
+
+            content.textContent = filteredString;
 
             const authorDateContainer = document.createElement('div');
             authorDateContainer.className = 'card-author-date';
@@ -180,8 +189,13 @@ document.addEventListener('DOMContentLoaded', () => {
             date.className = 'card-date';
             date.textContent = new Date(headline.publishedAt).toLocaleDateString();
 
+            const source = document.createElement('span');
+            source.className = 'card-source';
+            source.textContent = `Source: ${headline.source ? headline.source.name : 'Unknown Source'}`;
+
             authorDateContainer.appendChild(author);
             authorDateContainer.appendChild(date);
+            //authorDateContainer.appendChild(source);
 
             link.appendChild(image);
 
@@ -189,7 +203,9 @@ document.addEventListener('DOMContentLoaded', () => {
             card.appendChild(typeButton);
             card.appendChild(title);
             card.appendChild(description);
+            card.appendChild(content);
             card.appendChild(authorDateContainer);
+            card.appendChild(source);
 
             newsList.appendChild(card);
         });
