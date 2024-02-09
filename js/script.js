@@ -172,9 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const content = document.createElement('p');
             content.className = 'card-content';
             const thecontent = headline.content;
-            //const filteredString = thecontent.replace(/\s*\[.*?chars\]/, '');
             const filteredString = thecontent ? thecontent.replace(/\s*\[.*?chars\]/, '') : '';
-
             content.textContent = filteredString;
 
             const authorDateContainer = document.createElement('div');
@@ -194,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             authorDateContainer.appendChild(author);
             authorDateContainer.appendChild(date);
-            //authorDateContainer.appendChild(source);
 
             link.appendChild(image);
 

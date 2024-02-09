@@ -66,15 +66,16 @@ li img {
 /* Style for the type button */
 .card-type {
     display: block;
-    width: 100%;
     padding: 8px;
-    margin-bottom: 10px;
     background-color: #3498db;
     color: #fff;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    border-radius: 6px;
+    cursor: default !important;
+    pointer-events: none;
+    padding: 2px;
+    font-size: 12px;
+}   
 
 /* Style for the card title */
 .card-title {
@@ -101,14 +102,16 @@ li img {
 /* Style for the author and date container */
 .card-author-date {
     display: flex;
-    gap: 5px; /* Adjust the gap as needed */
+    gap: 5px;
+    word-break: break-all;
+    flex-flow: wrap;
     align-items: center;
     justify-content: space-between;
 }
 
 .card-author-date + .card-author-date {
-    grid-template-columns: 1fr; /* One column for the second row */
-    grid-column: 1 / 3; /* Span two columns for the second row */
+    grid-template-columns: 1fr; 
+    grid-column: 1 / 3; 
 }
 
 /* Style for the author */
@@ -258,7 +261,6 @@ button:hover {
 }
 
 .uncategorized-color {
-    /* Default color for uncategorized category */
     background-color: #95a5a6; 
     color: #333; 
 }
