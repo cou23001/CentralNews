@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const news = await response.json();
             // Filter out news with content "[Removed]" 
             const filteredNews = news.filter(article => article.content !== "[Removed]");
-            console.log(filteredNews);
             displayNews(filteredNews,category);
         } catch (error) {
             console.error(error);
