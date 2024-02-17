@@ -58,7 +58,8 @@ li img {
 /* Style for the card image */
 .card-image {
     width: 100%;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     border-radius: 6px;
     margin-bottom: 10px;
 }
@@ -73,7 +74,7 @@ li img {
     border-radius: 6px;
     cursor: default !important;
     pointer-events: none;
-    padding: 2px;
+    padding: 5px;
     font-size: 12px;
 }   
 
@@ -146,28 +147,6 @@ li img {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
     gap: 20px; 
-}
-
-.news-card {
-    max-width: 400px;
-    margin: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
-    flex: 1 0 25%; /* control the width of each card */
-}
-
-.news-card:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.card-image {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 10px;
 }
 
 /* Styling for the form */
