@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             preferencesModal.style.display = 'none';
         }
     });
-    
+    /*
     // Function to open/close preferences modal
     function togglePreferencesModal() {
         preferencesModal.style.display = preferencesModal.style.display === 'block' ? 'none' : 'block';
@@ -82,6 +82,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open/close preferences modal
     preferencesBtn.addEventListener('click', togglePreferencesModal);
     closeBtn.addEventListener('click', togglePreferencesModal);
+*/
+    // Function to handle modal close
+    function closeModal() {
+        preferencesModal.style.display = 'none';
+    }
+
+    // Event listener for close button
+    closeBtn.addEventListener('click', closeModal);
+
+    // Event listener to close the modal if the user clicks outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === preferencesModal) {
+            closeModal();
+        }
+    });
+
+    // Add event listener to the "Close" button
+    document.getElementById('closePreferences').addEventListener('click', closeModal);
 
     // Handle form submission
     preferencesForm.addEventListener('submit', (event) => {
@@ -254,3 +272,8 @@ function saveUserPreferences(preferences) {
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+document.getElementById('burgerMenu').addEventListener('click', function() {
+    var modal = document.getElementById('preferencesModal');
+    modal.style.display = (modal.style.display === 'block') ? 'none' : 'block';
+});

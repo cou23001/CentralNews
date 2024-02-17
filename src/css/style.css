@@ -286,8 +286,51 @@ button:hover {
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 40px;
+    right: 40px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 16px;
+}
+
+.bar {
+    width: 40px;
+    height: 4px;
+    background-color: #0056b3;
+    margin: 3px 0;
+}
+
+.category-label {
+    margin-right: 0px;
+}
+
+.category-container {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.button-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#closePreferences {
+    margin-left: 8px;
+}
+
+
+
+/* Styles for responsiveness */
+@media only screen and (max-width: 600px) {
+    .burger-menu {
+        display: block;
+    }
 }

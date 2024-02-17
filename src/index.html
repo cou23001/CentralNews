@@ -9,7 +9,12 @@
 <body>
     <header>
         <h1>Central News - Top Headlines</h1>
-        <button id="preferencesBtn">User Preferences</button>
+        <!-- burger menu icon -->
+        <div id="burgerMenu" class="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </header>
 
     <div id="formContainer"></div>
@@ -19,11 +24,13 @@
             <span class="close-btn">&times;</span>
             <h2>User Preferences</h2>
             <form id="preferencesForm">
-                <span>Select categories to display:</span>
-                <!-- <label for="preferencesForm">Select categories to display:</label> -->
-                <div id="categoryCheckboxes">
+                <label for="category" class="category-label">Select categories to display:</label>
+                <div id="categoryCheckboxes" class="category-container">
                 </div>
-                <button type="submit">Save Preferences</button>
+                <div class="button-container">
+                    <button type="submit">Save</button>
+                    <button type="button" id="closePreferences">Close</button>
+                </div>
             </form>
         </div>
     </div>
