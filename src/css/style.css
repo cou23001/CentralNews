@@ -312,4 +312,8 @@ button:hover {
     .burger-menu {
         display: block;
     }
+
+    h1 {
+        font-size: 22px;
+    }
 }
