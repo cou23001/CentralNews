@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formContainer = document.getElementById('formContainer');
 
-    const allCategories = ['general', 'business', 'entertainment', 'health', 'science', 'sports', 'technology'];
+    const allCategories = ['General', 'Business', 'Entertainment', 'Health', 'Science', 'Sports', 'Technology'];
     // Check if there are stored preferences in local storage
     const storedPreferences = getUserPreferences();
     const userCategories = storedPreferences.categories;
