@@ -19,6 +19,7 @@ header {
     top: 0;
     position: fixed;
     width: 95%;
+    z-index: 3;
 }
 
 .header-content {
@@ -26,6 +27,8 @@ header {
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
+    position: relative;
+    z-index: 3;
 }
 
 footer {
@@ -81,12 +84,16 @@ li img {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
 }
 
 .news-card:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
+    z-index: 2;
 }
 
 /* Style for the card image */
