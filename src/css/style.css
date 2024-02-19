@@ -75,7 +75,7 @@ li img {
 
 /* Style for the news card container */
 .news-card {
-    max-width: 400px;
+    max-width: 450px;
     margin: 20px;
     padding: 15px;
     border: 1px solid #ddd;
@@ -179,7 +179,7 @@ li img {
 #newsList {
     margin-top: 95px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(430px, 1fr)); 
     gap: 20px; 
 }
 
