@@ -364,4 +364,17 @@ button:hover {
         margin-right: 5px; 
         font-size: 14px;
     }
+
+    header {
+        position: static;
+    }
+
+    body {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    #newsList {
+        margin-top: 5px;
+    }
 }
