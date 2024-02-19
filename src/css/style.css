@@ -1,20 +1,25 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 10px 0 0;
 }
 
 header {
     background-color: white;
-    color: white;
+    color: #254cc3;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: center;
-    padding: 1em;
-    width: 100%;
-    position: fixed;
+    padding: 10px;
     top: 0;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
 }
 
 footer {
@@ -36,10 +41,8 @@ footer {
 h1 {
     color: #254cc3; 
     font-size: 32px; 
-    text-align: center; 
+    margin-top: 0;
     margin-bottom: 20px; 
-    margin: 0;
-    flex-grow: 1;
 }
 
 ul {
@@ -176,7 +179,7 @@ li img {
 /* Styling for the form */
 #categoryForm {
     text-align: center; 
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 #category{
@@ -298,6 +301,7 @@ button:hover {
 
 .burger-menu {
     cursor: pointer;
+    margin-right: 0px;
 }
 
 .bar {
@@ -326,7 +330,6 @@ button:hover {
 }
 
 
-
 /* Styles for responsiveness */
 @media only screen and (max-width: 600px) {
     .burger-menu {
@@ -335,5 +338,17 @@ button:hover {
 
     h1 {
         font-size: 22px;
+    }
+
+    .bar {
+        width: 25px;
+        height: 4px;
+        margin: 2px 0;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
+        margin-top: 5px;
     }
 }
