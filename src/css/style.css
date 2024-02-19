@@ -368,6 +368,12 @@ button:hover {
 
     header {
         position: static;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    #formContainer {
+        margin-top: 10px;
     }
 
     body {
