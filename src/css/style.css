@@ -404,4 +404,8 @@ button:hover {
         grid-template-columns: 1fr; 
         justify-content: center;
     }
+
+    .modal {
+        top: 16%
+    }
 }
