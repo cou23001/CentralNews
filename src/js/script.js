@@ -73,16 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             preferencesModal.style.display = 'none';
         }
     });
-    /*
-    // Function to open/close preferences modal
-    function togglePreferencesModal() {
-        preferencesModal.style.display = preferencesModal.style.display === 'block' ? 'none' : 'block';
-    }
-
-    // Open/close preferences modal
-    preferencesBtn.addEventListener('click', togglePreferencesModal);
-    closeBtn.addEventListener('click', togglePreferencesModal);
-*/
+    
     // Function to handle modal close
     function closeModal() {
         preferencesModal.style.display = 'none';
@@ -262,12 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
-/*
-// Function to save user preferences to local storage
-function saveUserPreferences(preferences) {
-    localStorage.setItem('userPreferences', JSON.stringify(preferences));   
-}
-*/
 
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
