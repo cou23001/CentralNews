@@ -152,13 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
             image.className = 'card-image';
 
             const categoryColorMap = {
-                general: 'general-color',
-                business: 'business-color',
-                entertainment: 'entertainment-color',
-                health: 'health-color',
-                science: 'science-color',
-                sports: 'sports-color',
-                technology: 'technology-color',
+                General: 'general-color',
+                Business: 'business-color',
+                Entertainment: 'entertainment-color',
+                Health: 'health-color',
+                Science: 'science-color',
+                Sports: 'sports-color',
+                Technology: 'technology-color',
             };  
             const typeButton = document.createElement('button');
             typeButton.className = 'card-type';
