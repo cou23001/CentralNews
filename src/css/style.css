@@ -380,7 +380,7 @@ button:hover {
     button {
         padding: 6px 10px;
         font-size: 12px;
-        margin-top: 5px;
+        margin-top: 15px;
         margin-right: 5px;
     }
 
@@ -412,6 +412,6 @@ button:hover {
     }
 
     .modal {
-        top: 16%
+        top: 22%
     }
 }
