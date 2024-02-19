@@ -51,7 +51,8 @@ h1 {
     color: #254cc3; 
     font-size: 32px; 
     margin-top: 0;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    margin-right: 90px;
 }
 
 ul {
@@ -217,6 +218,7 @@ button {
     border: none;
     cursor: pointer;
     font-size: 14px;
+    margin-right: 80px;
 }
 
 button:hover {
@@ -354,6 +356,7 @@ button:hover {
     h1 {
         font-size: 22px;
         margin-bottom: 5px;
+        margin-right: 5px;
     }
 
     .bar {
@@ -366,6 +369,7 @@ button:hover {
         padding: 6px 10px;
         font-size: 12px;
         margin-top: 5px;
+        margin-right: 5px;
     }
 
     label {
